@@ -21,91 +21,142 @@ $textColor: rgba(3, 10, 27, 0.7);
 .content-wrapper {
   margin-left: 3px;
   margin-right: 3px;
+  @media (max-width: $md3) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 //Header =============================================================================================================================================
 
 .header {
   box-sizing: border-box;
-  margin: 45px 0 0 0;
+  margin-top: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $md3) {
+    margin-top: 0;
+    min-height: 20vh;
+  }
   &__logo {
     width: 250px;
     min-width: 250px;
     height: 65px;
     min-height: 65px;
+    position: relative;
+    z-index: 5;
+    @media (max-width: $md4) {
+      width: 200px;
+      min-width: 200px;
+      height: 52px;
+      min-height: 52px;
+    }
   }
 }
 
+//Background picture =================================================================================================================================
 
-
-.menu__body {
+.background-picture {
+  @media (min-width: $md3) {
+    display: none;
+  }
   @media (max-width: $md3) {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../src/assets/img/main-section-img-cover.jpg);
+    background-size: cover;
     top: 0;
-    left: -100%;
-    background-color: #fcf8f3;
-    transition: left 0.3s ease 0s;
-    padding: 70px 15px 30px 15px;
-    &::before {
-      content: "";
-      position: fixed;
-      width: 100%;
-      height: 50px;
-      top: 0;
-      left: -100%;
-      transition: left 0.3s ease 0s;
-      background-color: #fcf8f3;
-      z-index: 2;
-    }
-  }
-  &_active {
     left: 0;
-    &::before {
-      left: 0;
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;  
   }
 }
-}
-._active {
-      left: 0;
-      &::before {
-        left: 0;
-      }
-    }
-
 
 //Main section =======================================================================================================================================
 
 .main-section {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 68px;
+  gap: 20px;
+  @media (max-width: $md3) {
+    margin-top: 0;
+    min-height: 80vh;
+  }
   &__description {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    @media (max-width: $md3) {
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &__header {
-    font-size: 61px;
+    font-size: 3.813em;
     line-height: 120%;
     margin: 45px 0 0 4px;
-    min-width: 500px;
+    @media (max-width: $md1) {
+      font-size: 3em;
+    }
+    @media (max-width: $md3) {
+      font-family: poppinsSemiBold;
+      font-size: 3em;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: $md4) {
+      font-size: 2em;
+    }
+  }
+  &__search-btn_general {
+    @media (min-width: $md3) {
+      display: none;
+    }
+    @media (max-width: $md3) {
+      width: 149px;
+      min-width: 149px;
+      height: 54px;
+      min-height: 54px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      position: relative;
+      z-index: 3;
+      border-radius: 5px;
+      &::before {
+        content: url('../src/assets/img/search_ico.svg');
+        line-height: 90%;
+      }
+    }
   }
   &__text {
     margin: 29px 0 0 4px;
     font-size: 1.125em;
     color: $textColor;
-    min-width: 500px;
+    max-width: 560px;
+    @media (max-width: $md3) {
+      color: #000000;
+      text-align: center;
+      margin-bottom: 10%;
+      position: relative;
+      z-index: 3;
+    }
   }
   &__overlay {
     position: relative;
     margin-top: 7%;
+    @media (max-width: $md3) {
+      display: none;
+    }
   }
   &__search {
     margin-left: 4px;
@@ -156,14 +207,11 @@ $textColor: rgba(3, 10, 27, 0.7);
       content: url('../src/assets/img/bird.svg');
       margin-left: 10px;
     }
+
   }
   &__dropdown-menu {
     list-style-type: none;
-  }
-  &__img {
-    margin-left: 100px;
-    min-height: 415px;
-    max-height: 615px;
+
   }
   &__search-btn {
     width: 149px;
@@ -182,6 +230,14 @@ $textColor: rgba(3, 10, 27, 0.7);
       left: 10px;
     }
   }
+  &__img {
+    //margin-left: 100px;
+    //min-height: 415px;
+    max-height: 615px;
+    @media (max-width: $md3) {
+      display: none;
+    }
+  }
 }
 
 //"Our Partners" section =============================================================================================================================
@@ -192,6 +248,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     margin: 100px auto 65px auto;
     text-align: center;
     position: relative;
+    z-index: 1;
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
       position: absolute;
@@ -252,6 +309,10 @@ $textColor: rgba(3, 10, 27, 0.7);
     grid-template-rows: 1fr 1fr; 
     gap: 30px 30px;
   }
+   //Temporary
+   @media (max-width: $md3) {
+    display: none;
+  }
 }
 
 //"Property Featured" section ========================================================================================================================
@@ -302,6 +363,10 @@ $textColor: rgba(3, 10, 27, 0.7);
     height: 100%;
     max-height: 548px;
     align-self: center;
+  }
+   //Temporary
+   @media (max-width: $md3) {
+    display: none;
   }
 }
 
@@ -357,6 +422,10 @@ $textColor: rgba(3, 10, 27, 0.7);
     &_active {
       background-color: #2E6EFF;
     }
+  }
+   //Temporary
+   @media (max-width: $md3) {
+    display: none;
   }
 }
 
@@ -470,12 +539,16 @@ $textColor: rgba(3, 10, 27, 0.7);
       margin: 20px auto auto auto;
     }
   }
+    //Temporary
+    @media (max-width: $md3) {
+      display: none;
+    }
 }
 
 //Footer =============================================================================================================================================
 .footer {
   margin-top: 140px;
-  @media (max-width: $md4) {
+  @media (max-width: $md3) {
     margin-top: 50px;
   }
   margin-bottom: 50px;
@@ -485,7 +558,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   padding: 0 4px 0 4px;
 
   &__socials {
-    @media (max-width: $md4) {
+    @media (max-width: $md3) {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -503,7 +576,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     max-width: 300px;
     line-height: 24px;
     color: rgba(3, 10, 27, 70%);
-    @media (max-width: $md4) {
+    @media (max-width: $md3) {
       text-align: center;
       margin-top: 10px;
     }
@@ -513,7 +586,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-direction: row;
     gap: 15px;
     margin-top: 26px;
-    @media (max-width: $md4) {
+    @media (max-width: $md3) {
       margin: 0;
     }
   }
@@ -542,7 +615,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-direction: row;
     justify-content: start;
     gap: 174px;
-    @media (max-width: $md4) {
+    @media (max-width: $md3) {
       display: none;
     }
   }
@@ -606,12 +679,14 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Buttons ------------------------------------------------------------------------------------------
 
 .button {
-  font-family: poppinsRegular;
-  font-size: 1em;
-  line-height: 100%;
+  font-family: poppinsMedium;
+  line-height: 24px;
   border: none;
   background-color: #2E6EFF;
   color: #FFFFFF;
+  &:active {
+    background-color: #FE753F;
+  }
 }
 
 //Dropdowns ----------------------------------------------------------------------------------------
@@ -837,6 +912,15 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Header menu ========================================================================================================================================
 
 .menu {
+  &__body {
+    @media (max-width: $md3) {
+      position: fixed;
+      width: 50%;
+      height: 100vh;
+      background: rgba(120, 115, 182, 0.98);
+      z-index: 5;
+    }
+  }
   &__list {
     margin: 0;
     list-style: none;
@@ -878,12 +962,52 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
 }
 
+
+
+.menu__body {
+  @media (max-width: $md3) {
+
+    overflow: auto;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease 0s;
+    padding: 70px 15px 30px 15px;
+    /*&::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease 0s;
+      background-color: #fcf8f3;
+      z-index: 5;
+    }*/
+  }
+  &_active {
+    left: 0;
+    &::before {
+      left: 0;
+  }
+}
+}
+._active {
+      left: 0;
+      &::before {
+        left: 0;
+      }
+    }
+
+
+
+
+
 //Burger =============================================================================================================================================
 
 .icon-menu {
 	display: none;
 	@media (max-width: $md3) {
-		position: relative;
+    position: relative;
 		display: block;
 		flex: 0 0 30px;
     background-color: transparent;
@@ -898,7 +1022,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 			position: absolute;
 			width: 100%;
 			height: 2px;
-			background-color: #000;
+			background-color: rgb(167, 49, 49);
 			&:first-child {
 				top: 0px;
 			}

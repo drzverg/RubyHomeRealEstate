@@ -7,6 +7,7 @@ import "../src/assets/fonts/fonts.scss";
 //Import images
 import "../src/assets/img/logo.svg";
 
+import "../src/assets/img/main-section-img-cover.jpg";
 import "../src/assets/img/main-section-img.jpg";
 import "../src/assets/img/feautured-img.jpg";
 
@@ -123,17 +124,17 @@ function showUp(target) {
 //Burger menu
 const iconMenu = document.querySelector(".icon-menu");
 const menuBody = document.querySelector(".menu__body");
-const menuButton = document.querySelector(".header__button");
+const menuButton = document.querySelector(".menu__link_button");
 
 iconMenu.addEventListener("click", function () {
   if (iconMenu.classList.contains("icon-menu_active")) {
     iconMenu.classList.remove("icon-menu_active");
 	  menuBody.classList.remove("menu__body_active");
-    menuButton.classList.add("button", "header__button");
+    setTimeout(() => {menuButton.classList.add("button", "menu__link_button");}, 100);
   } 
   else {
     iconMenu.classList.toggle("icon-menu_active");
 	  menuBody.classList.toggle("menu__body_active");
-    menuButton.classList.remove("button", "header__button");
+    menuButton.classList.remove("button", "menu__link_button");
   }
 });
