@@ -8,7 +8,7 @@ import "../src/assets/fonts/fonts.scss";
 import "../src/assets/img/logo.svg";
 
 import "../src/assets/img/main-section-img.jpg";
-import "../src/assets/img/feautured-section-img.jpg";
+import "../src/assets/img/feautured-img.jpg";
 
 import "../src/assets/img/biotech.svg";
 import "../src/assets/img/express.svg";
