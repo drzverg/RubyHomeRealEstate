@@ -1,0 +1,175 @@
+mixin popular(img, name, place, bedroom, dining, bathroom, price)
+  .property-card
+    img.property-card__photo(src= img alt= name+' preview photo')
+    .property-card__body
+      .property-card__header 
+        h3.property-card__name= name
+        .property-card__like.icon-font.icon-font_heart 
+      p.property-card__place= place
+      ul.property-card__description 
+        li.property-card__element.property-card__element_bedroom= bedroom
+        li.property-card__element.property-card__element_dining= dining
+        li.property-card__element.property-card__element_bathroom= bathroom
+      .property-card__footer
+        p.property-card__price= price
+        a(href='#').button.property-card__details-btn View Details
+
+mixin featured(img, header, description)
+  .featured-card
+    .featured-card__icon
+      img(src= img)
+    h3.featured-card__header= header
+    p.featured-card__description= description
+
+mixin review(photo, name, position, review)
+  .review-card 
+    .review-card__header 
+      img.review-card__photo(src= photo)
+      .review-card__person 
+        p.review-card__person-name= name 
+        p.review-card__person-position= position
+    p.review-card__review-text= review
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content='IE=edge')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Ruby Home
+  body.site-wrapper
+    header.header.content-wrapper
+      a(href="index.html")
+        img.header__logo(src='./assets/img/logo.svg' alt='RubyHome logo')
+      .header__menu.menu
+        nav.menu__body
+          ul.menu__list
+            li.menu__item
+              a.menu__link_active(href='#') Home
+            li.menu__item   
+              a.menu__link(href='#') Properties
+            li.menu__item 
+              a.menu__link(href='#') About us
+            li.menu__item 
+              a.menu__link(href='#') Blog
+            li.menu__item  
+              a.menu__link.menu__link_button.button(href='#') Contact us
+      button(type='button').icon-menu
+        span 
+        span 
+        span
+    main.content-wrapper 
+      section.main-section 
+        .main-section__description
+          h1.main-section__header Find the perfect place to stay with your family
+          p.main-section__text Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.
+          .main-section__overlay
+            form(onsubmit="return false").main-section__search
+              .main-section__search-options
+                button.main-section__search-options-btn.main-section__search-options-btn_active Buy 
+                button.main-section__search-options-btn Rent 
+                button.main-section__search-options-btn Sell 
+              .main-section__search-menu
+                .main-section__dropdown-block.main-section__dropdown-block_location
+                  .main-section__dropdown-header Location
+                  p.main-section__dropdown-checked Dhaka
+                  ul.main-section__dropdown-menu.dropdown-closed
+                    li.main-section__dropdown-item Dhaka
+                    li.main-section__dropdown-item Item 2
+                    li.main-section__dropdown-item Item 3
+                button.main-section__search-btn Search
+        img.main-section__img(src='./assets/img/main-section-img.jpg')
+      section.partners-section
+        h2.section-header.partners-section__header Our Partners 
+        .partners-section__nav
+          a.partners-section__link(href="#")
+            img(src='./assets/img/biotech.svg')
+          a.partners-section__link(href="#")
+            img(src='./assets/img/express.svg')
+          a.partners-section__link(href="#")
+            img(src='./assets/img/smilehome.svg')
+          a.partners-section__link(href="#")
+            img(src='./assets/img/connect.svg')
+          a.partners-section__link(href="#")
+            img(src='./assets/img/homebuild.svg')
+      section.popular
+        .popular__header-container
+          h2.section-header.popular__section-header Popular Properties
+          a.popular__link(href="#") View all
+        .popular__grid-container
+          +popular('./assets/img/properties/capital-hill-residence.jpg', 'Capital hill residence', 'East London', 6, 2, 3, '5527.00') 
+          +popular('./assets/img/properties/picket-fence-realty.jpg', 'Picket Fence Realty', 'East London', 6, 2, 3, '6727.00')
+          +popular('./assets/img/properties/banyon-tree-realty.jpg', 'Banyon Tree Realty', 'East London', 6, 2, 3, '4327.00')
+          +popular('./assets/img/properties/corsair-real-estate.jpg', 'Corsair Real Estate', 'East London', 6, 2, 3, '4427.00')
+          +popular('./assets/img/properties/sequoia-real-estate.jpg', 'Sequoia Real Estate', 'East London', 6, 2, 3, '4527.00')
+          +popular('./assets/img/properties/strive-partners-realty.jpg', 'Strive Partners Realty', 'East London', 6, 2, 3, '5527.00')
+      section.featured
+        h2.section-header.featured__section-header Property Featured
+        p.featured__section-description Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there’s plenty of 
+        .featured__content
+          .featured__grid-container.featured__grid-container_left
+            +featured('./assets/img/security_ico.svg', '100% Security', 'For many of us, buying a home is a dre and one not easily attainable.')
+            +featured('./assets/img/air_ico.svg', 'Free air conditioner', 'For many of us, buying a home is a dre and one not easily attainable.')
+            +featured('./assets/img/garden_ico.svg', 'Flower garden', 'For many of us, buying a home is a dre and one not easily attainable.')
+          img.featured__picture(src='../assets/img/feautured-section-img.jpg')
+          .featured__grid-container.featured__grid-container_right
+            +featured('./assets/img/parking_ico.svg', 'Parkers & movers', 'For many of us, buying a home is a dre and one not easily attainable.')
+            +featured('./assets/img/furniture_ico.svg', 'Rental furniture', 'For many of us, buying a home is a dre and one not easily attainable.')
+            +featured('./assets/img/pool_ico.svg', 'Swimming pool', 'For many of us, buying a home is a dre and one not easily attainable.')
+      section.reviews
+        a(href="#").reviews__link Reviews 
+        h2.section-header.reviews__section-header Our valuable customer says
+        .reviews__slider 
+          .reviews__block.reviews__block_active
+            +review('./assets/img/reviewers/jlee.jpg', 'Justin Lee', 'Products Designer at Ito', 'A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money. Been there. Done that. Sold. Bought Bringing It All Together.')
+            +review('./assets/img/reviewers/acathe.jpg', 'Angel Cathe', 'Products Designer at Ito', 'A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money. Been there. Done that. Sold. Bought be Bringing It All Together there.')
+          .reviews__block
+            +review('./assets/img/reviewers/rev_1_m.jpg', 'Slide Two (First)', 'Web Designer', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+            +review('./assets/img/reviewers/rev_1_fem.jpg', 'Slide Two (Second)', 'Web Designer', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')          
+          .reviews__block
+            +review('./assets/img/reviewers/rev_2_m.jpg', 'Slide Three (First)', 'Web Developer', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+            +review('./assets/img/reviewers/rev_2_fem.jpg', 'Slide Three (Second)', 'Web Developer', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+          .reviews__block
+            +review('./assets/img/reviewers/rev_3_m.jpg', 'Slide Four (First)', 'SEO Specialist', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+            +review('./assets/img/reviewers/rev_3_fem.jpg', 'Slide Four (Second)', 'SEO Specialist', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
+          .reviews__slider-dots 
+            .reviews__slider-dot.reviews__slider-dot_active
+            .reviews__slider-dot
+            .reviews__slider-dot
+            .reviews__slider-dot
+      section.subscribe
+        h2.subscribe__header Get listed your home as a owner
+        p.subscribe__text Here is a list of the greatest real estate company slogans of all-time. These catchy slogans are followed by the Greatest Real Estate.
+        form.subscribe__form(action="#" method="get")
+          input.subscribe__input(type="email", name="mail", placeholder="Enter email adress") 
+          button.button.subscribe__button(type="submit") Subscribe
+    footer.footer.content-wrapper
+      .footer__socials
+        a(href='index.html')
+          img.footer__logo(src='./assets/img/logo.svg' alt='RubyHome logo')
+        p.footer__socials-desc Contrary to popular  is not simply random text. It has 
+        .footer__socials-links 
+          a(href='https://www.facebook.com/').footer__socials-btn.icon-font.icon-font_facebook
+          a(href='https://www.instagram.com/').footer__socials-btn.icon-font.icon-font_instagram
+          a(href='https://twitter.com/').footer__socials-btn.icon-font.icon-font_twitter 
+          a(href='https://www.youtube.com/').footer__socials-btn.icon-font.icon-font_youtube 
+          a(href='https://www.linkedin.com/').footer__socials-btn.icon-font.icon-font_linkedin  
+      .footer__navigation 
+        nav.footer__menu 
+          p.footer__menu-head About
+          a(href='#').footer__link Company
+          a(href='#').footer__link Team
+          a(href='#').footer__link Career
+          a(href='#').footer__link Blogs
+        nav.footer__menu 
+          p.footer__menu-head Products
+          a(href='#').footer__link E-Books
+          a(href='#').footer__link Preasantation
+          a(href='#').footer__link Management
+          a(href='#').footer__link Dashboard
+        .footer__menu
+          p.footer__menu-head Address
+          p.footer__address Country Delevery
+          p.footer__address Counter Beach Post
+          a(href='#' target='_blank').footer__address_internet www.itobd.com
+          a(href='tel:+880176565655').footer__address_phone +880176565655
