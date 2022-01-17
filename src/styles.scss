@@ -153,7 +153,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &__overlay {
     position: relative;
-    margin-top: 7%;
+    margin-top: 6.4%;
     @media (max-width: $md3) {
       display: none;
     }
@@ -188,51 +188,38 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &__search-menu {
     box-sizing: border-box;
-    padding: 35px 30px;
+    padding: 31px 28px;
     display: flex;
     flex-direction: row;
-    height: 72%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70%;
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 0 5px 5px 5px;
     z-index: 1;
     box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
   }
-  &__dropdown-block {
-
-  }
-  &__dropdown-header {
-    color: rgba(3, 10, 27, 70%);
-    &::after {
-      content: url('../src/assets/img/bird.svg');
-      margin-left: 10px;
-    }
-
-  }
-  &__dropdown-menu {
-    list-style-type: none;
-
-  }
   &__search-btn {
-    width: 149px;
-    min-width: 149px;
+    width: 120px;
+    min-width: 120px;
     height: 54px;
     min-height: 54px;
-    margin-left: 50px;
-    background-color: #2E6EFF;
-    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     border-radius: 10px;
-    position: relative;
+    margin-left: 2.5%;
+    font-family: poppinsMedium;
+    font-size: 1em;
     &::before {
       content: url('../src/assets/img/search_ico.svg');
-      position: absolute;
-      top: 10px;
-      left: 10px;
+      line-height: 1em;
     }
   }
   &__img {
-    //margin-left: 100px;
-    //min-height: 415px;
     max-height: 615px;
     @media (max-width: $md3) {
       display: none;
@@ -1045,4 +1032,63 @@ $textColor: rgba(3, 10, 27, 0.7);
 			}
 		}
 	}
+}
+
+//Main section dropdowns ===========================================================================================+++===============================
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  &:nth-child(1) {
+    flex: 0 0 139px;
+  }
+  &:nth-child(2) {
+    box-sizing: border-box;
+    padding-left: 67px;
+    flex: 0 0 241px;
+    &::before {
+      content: url('../src/assets/img/line.svg');
+      position: absolute;
+      top: 15px;
+      left: 0;
+    }
+  }
+  &:nth-child(3) {
+    box-sizing: border-box;
+    padding-left: 67px;
+    flex: 0 0 262px;
+    &::before {
+      content: url('../src/assets/img/line.svg');
+      position: absolute;
+      top: 15px;
+      left: 0;
+    }
+  }
+  &__header {
+    color: $textColor;
+    cursor: pointer;
+    &::after {
+      content: url('../src/assets/img/bird.svg');
+      margin-left: 10px;
+    }
+  }
+  &__text {
+    margin: 0;
+    font-family: poppinsMedium;
+    font-size: 1.375em;
+  }
+  &__list {
+    display: none;
+    &_active {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border: 1px solid black;
+      position: absolute;
+      top: 80%;
+    }
+  }
 }
