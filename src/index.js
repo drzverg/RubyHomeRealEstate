@@ -6,6 +6,7 @@ import "../src/assets/fonts/fonts.scss";
 
 //Import images
 import "../src/assets/img/logo.svg";
+import '../src/assets/img/favicon.ico';
 
 import "../src/assets/img/main-section-img-cover.jpg";
 import "../src/assets/img/main-section-img.jpg";
