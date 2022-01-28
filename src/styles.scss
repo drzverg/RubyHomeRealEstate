@@ -211,7 +211,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    margin-left: 2.5%;
+    margin-left: 4.5%;
     font-family: poppinsMedium;
     font-size: 1em;
     &::before {
@@ -1034,7 +1034,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 	}
 }
 
-//Main section dropdowns ===========================================================================================+++===============================
+//Main section dropdowns =============================================================================================================================
 
 .dropdown {
   display: flex;
@@ -1046,24 +1046,13 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &:nth-child(2) {
     box-sizing: border-box;
-    padding-left: 67px;
-    flex: 0 0 241px;
+    margin-left: 67px;
+    flex: 0 0 175px;
     &::before {
       content: url('../src/assets/img/line.svg');
       position: absolute;
       top: 15px;
-      left: 0;
-    }
-  }
-  &:nth-child(3) {
-    box-sizing: border-box;
-    padding-left: 67px;
-    flex: 0 0 262px;
-    &::before {
-      content: url('../src/assets/img/line.svg');
-      position: absolute;
-      top: 15px;
-      left: 0;
+      left: -67px;
     }
   }
   &__header {
@@ -1084,11 +1073,54 @@ $textColor: rgba(3, 10, 27, 0.7);
     &_active {
       list-style: none;
       display: flex;
+      gap: 3px;
       flex-direction: column;
       padding: 0;
-      border: 1px solid black;
+      width: 100%;
+      border-right: 1px solid rgba(3, 10, 27, 0.1);
       position: absolute;
       top: 80%;
+      background-color: rgba(217, 215, 240, 0.98);
+      z-index: 5;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    font-size: 0.85em;
+    &:hover {
+      background-color: #FE753F;
+      color: #FFFFFF
     }
   }
 }
+
+//Main section slider ================================================================================================================================
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+  flex: 0 0 180px;
+  position: relative;
+  margin-left: 67px;
+  &::before {
+    content: url('../src/assets/img/line.svg');
+    position: absolute;
+    top: 15px;
+    left: -67px;
+  }
+  &__container {
+    //display: none;
+  }
+}
+
+/*.slider {
+  display: block;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 5;
+  background-color: blue;
+}*/

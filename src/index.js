@@ -41,6 +41,32 @@ import "../src/assets/img/reviewers/rev_2_m.jpg";
 import "../src/assets/img/reviewers/rev_3_fem.jpg";
 import "../src/assets/img/reviewers/rev_3_m.jpg";
 
+//Slider
+
+import noUiSlider from 'nouislider';
+import '../node_modules/nouislider/dist/nouislider.min.css'
+
+var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
+
+noUiSlider.create(nonLinearStepSlider, {
+    start: [500, 4000],
+    range: {
+        'min': [0],
+        '10%': [500, 500],
+        '50%': [4000, 1000],
+        'max': [9000]
+    }
+});
+
+var nonLinearStepSliderValueElement = document.getElementById('slider-non-linear-step-value');
+
+nonLinearStepSlider.noUiSlider.on('update', function (values) {
+  let cleanValues = [];
+  for (const value of values) {
+    cleanValues.push('$' + Math.round(value));
+  }
+  nonLinearStepSliderValueElement.innerHTML = cleanValues.join(' - ');
+});
 
 //Search options
 const searchOptions = document.querySelectorAll(".main-section__search-options-btn");
@@ -55,22 +81,53 @@ for (const searchOption of searchOptions) {
 }
 
 //Search dropdowns
-/*const dropdownBlocks = document.querySelectorAll('.main-section__dropdown-block')
-const dropdownMenus = document.querySelectorAll('.main-section__dropdown-menu')
+const dropdowns = document.querySelectorAll('.dropdown');
+const dropdownMenus = document.querySelectorAll('.dropdown__list');
+const dropdownItems = document.querySelectorAll('.dropdown__item');
+const dropdownTexts = document.querySelectorAll('.dropdown__text');
 
-  for (const dropdownBlock of dropdownBlocks) {
-    dropdownBlock.addEventListener('click', ()=> {
-      if(dropdown.classList.contains('dropdown-closed')) {
-        dropdown.classList.remove('dropdown-closed')
-        dropdown.classList.add('dropdown-opened')
-        console.log('piu!')
-      }
-      else
-        dropdown.classList.remove('dropdown-opened')
-        dropdown.classList.add('dropdown-closed')
-        console.log('pau!')
-    })
-    }*/
+dropdowns.forEach((dropdown, i) => {
+  dropdown.addEventListener('click', () => {
+    showDropdownMenu(i);
+  })
+})
+
+function showDropdownMenu(n) {
+  if(dropdownMenus[n].classList.contains('dropdown__list_active')) {
+    hideDropdowns();
+  }
+  else {
+    hideDropdowns();
+    dropdownMenus[n].classList.add('dropdown__list_active');
+    dropdownTexts[n].classList.add('dropdown__text_target');
+  }
+}
+
+function hideDropdowns() {
+  dropdownMenus.forEach((dropdownMenu) => {
+    dropdownMenu.classList.remove('dropdown__list_active');
+  })
+  dropdownTexts.forEach((dropdownText) => {
+    dropdownText.classList.remove('dropdown__text_target');
+  })
+}
+
+window.addEventListener('click', e => {
+  const target = e.target
+  if (!target.closest('.dropdown__list') && !target.closest('.dropdown')) {
+    hideDropdowns();
+  }
+})
+
+dropdownItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (item.textContent.length > 10) {
+      document.querySelector('.dropdown__text_target').textContent = item.textContent.substring(0, 10) + '...';
+    } else {
+      document.querySelector('.dropdown__text_target').textContent = item.textContent;
+    }
+  })
+})
 
 //Like button
 const likes = document.querySelectorAll(".property-card__like");
