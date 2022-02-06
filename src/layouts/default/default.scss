@@ -1,0 +1,18 @@
+@use "../default/fonts" as fonts;
+@use "../default/variables" as variables;
+
+.site-wrapper {
+  margin: 0 auto;
+  max-width: 1154px;
+  font-family: "Poppins";
+  font-size: 16px;
+}
+
+.content-wrapper {
+  margin-left: 3px;
+  margin-right: 3px;
+  @media (max-width: variables.$md3) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

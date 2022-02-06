@@ -1,31 +1,4 @@
-@use "../src/assets/fonts/fonts.scss";
-
-//Variables ==========================================================================================================================================
-
-$md1: 1024px;
-$md2: 960px;
-$md3: 768px;
-$md4: 480px;
-
-$textColor: rgba(3, 10, 27, 0.7);
-
-//General styles =====================================================================================================================================
-
-.site-wrapper {
-  margin: 0 auto;
-  max-width: 1154px;
-  font-family: poppinsRegular;
-  font-size: 16px;
-}
-
-.content-wrapper {
-  margin-left: 3px;
-  margin-right: 3px;
-  @media (max-width: $md3) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
+@use "../src/layouts/default/variables" as variables;
 
 //Header =============================================================================================================================================
 
@@ -36,7 +9,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: $md3) {
+  @media (max-width: variables.$md3) {
     margin-top: 0;
     min-height: 20vh;
   }
@@ -47,7 +20,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     min-height: 65px;
     position: relative;
     z-index: 5;
-    @media (max-width: $md4) {
+    @media (max-width: variables.$md4) {
       width: 200px;
       min-width: 200px;
       height: 52px;
@@ -59,10 +32,10 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Background picture =================================================================================================================================
 
 .background-picture {
-  @media (min-width: $md3) {
+  @media (min-width: variables.$md3) {
     display: none;
   }
-  @media (max-width: $md3) {
+  @media (max-width: variables.$md3) {
     width: 100vw;
     height: 100vh;
     background-image: url(../src/assets/img/main-section-img-cover.jpg);
@@ -83,7 +56,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   justify-content: space-between;
   margin-top: 68px;
   gap: 20px;
-  @media (max-width: $md3) {
+  @media (max-width: variables.$md3) {
     margin-top: 0;
     min-height: 80vh;
   }
@@ -91,34 +64,35 @@ $textColor: rgba(3, 10, 27, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       justify-content: space-between;
       align-items: center;
     }
   }
   &__header {
+    font-weight: 600;
     font-size: 3.813em;
     line-height: 120%;
     margin: 45px 0 0 4px;
-    @media (max-width: $md1) {
+    @media (max-width: variables.$md1) {
       font-size: 3em;
     }
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       font-family: poppinsSemiBold;
       font-size: 3em;
       text-align: center;
       position: relative;
       z-index: 3;
     }
-    @media (max-width: $md4) {
+    @media (max-width: variables.$md4) {
       font-size: 2em;
     }
   }
   &__search-btn_general {
-    @media (min-width: $md3) {
+    @media (min-width: variables.$md3) {
       display: none;
     }
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       width: 149px;
       min-width: 149px;
       height: 54px;
@@ -141,9 +115,10 @@ $textColor: rgba(3, 10, 27, 0.7);
   &__text {
     margin: 29px 0 0 4px;
     font-size: 1.125em;
-    color: $textColor;
+    font-weight: 500;
+    color: variables.$textColorGeneral;
     max-width: 560px;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       color: #000000;
       text-align: center;
       margin-bottom: 10%;
@@ -154,7 +129,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   &__overlay {
     position: relative;
     margin-top: 6.4%;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       display: none;
     }
   }
@@ -175,14 +150,16 @@ $textColor: rgba(3, 10, 27, 0.7);
     box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
   }
   &__search-options-btn {
-    flex: 1 0 auto;
+    flex: 1 0 0;
     border: none;
     background-color: #FFFFFF;
-    font-family: poppinsMedium;
+    font-family: "Poppins";
+    font-weight: 500;
     font-size: 18px;
     color: rgba(3, 10, 27, 70%);
     cursor: pointer;
     &_active {
+      font-weight: 600;
       color: #FE753F;
     }
   }
@@ -212,7 +189,6 @@ $textColor: rgba(3, 10, 27, 0.7);
     gap: 10px;
     border-radius: 10px;
     margin-left: 4.5%;
-    font-family: poppinsMedium;
     font-size: 1em;
     &::before {
       content: url('../src/assets/img/search_ico.svg');
@@ -221,7 +197,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &__img {
     max-height: 615px;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       display: none;
     }
   }
@@ -254,7 +230,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-wrap: wrap;
   }
   &__link {
-    @media (max-width: $md2) {
+    @media (max-width: variables.$md2) {
     margin: 0 auto;
     }
   }
@@ -286,7 +262,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     text-transform: uppercase;
     text-decoration: none;
     margin: 0 0 0 25px;
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     color: #FE753F;
   }
   &__grid-container {
@@ -297,7 +273,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     gap: 30px 30px;
   }
    //Temporary
-   @media (max-width: $md3) {
+   @media (max-width: variables.$md3) {
     display: none;
   }
 }
@@ -352,7 +328,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     align-self: center;
   }
    //Temporary
-   @media (max-width: $md3) {
+   @media (max-width: variables.$md3) {
     display: none;
   }
 }
@@ -363,7 +339,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   &__link {
     margin-top: 140px;
     display: block;
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     color: #FE753F;
     text-align: center;
     text-decoration: none;
@@ -411,7 +387,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     }
   }
    //Temporary
-   @media (max-width: $md3) {
+   @media (max-width: variables.$md3) {
     display: none;
   }
 }
@@ -429,7 +405,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  @media (max-width: $md4) {
+  @media (max-width: variables.$md4) {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -445,7 +421,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     position: absolute;
     top: 3.5%;
     left: -13.5%;
-    @media (max-width: $md2) {
+    @media (max-width: variables.$md2) {
       display: none;
     }
   }
@@ -460,7 +436,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     position: absolute;
     top: 81.5%;
     left: 80.5%;
-    @media (max-width: $md2) {
+    @media (max-width: variables.$md2) {
       display: none;
     }
   }
@@ -470,7 +446,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     line-height: 60px;
     color: #FFFFFF;
     text-align: center;
-    @media (max-width: $md4) {
+    @media (max-width: variables.$md4) {
       font-size: 1.75em;
       line-height: 30px;
     }
@@ -492,7 +468,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     margin-top: 70px;
     background-color: #FFFFFF;
     border: 1px solid;
-    @media (max-width: $md4) {
+    @media (max-width: variables.$md4) {
       flex-direction: column;
       background-color: transparent;
       width: 100%;
@@ -506,28 +482,30 @@ $textColor: rgba(3, 10, 27, 0.7);
     height: 100%;
     padding-left: 30px;
     padding-right: 30px;
-    font-family: poppinsRegular;
+    font-family: "Poppins";
     font-size: 1em;
     color: rgba(3, 10, 27, 70%);
-    @media (max-width: $md4) {
+    @media (max-width: variables.$md4) {
       padding-left: 10px;
       padding-right: 10px;
       height: 30px;
       border-radius: 10px;
     }
   }
+  
   &__button {
     width: 162px;
     height: 56px;
     border-radius: 10px;
     margin: auto 7px auto 7px;
-    @media (max-width: $md4) {
+    font-size: 1em;
+    @media (max-width: variables.$md4) {
       height: 60px;
       margin: 20px auto auto auto;
     }
   }
     //Temporary
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       display: none;
     }
 }
@@ -535,7 +513,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Footer =============================================================================================================================================
 .footer {
   margin-top: 140px;
-  @media (max-width: $md3) {
+  @media (max-width: variables.$md3) {
     margin-top: 50px;
   }
   margin-bottom: 50px;
@@ -545,7 +523,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   padding: 0 4px 0 4px;
 
   &__socials {
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -563,7 +541,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     max-width: 300px;
     line-height: 24px;
     color: rgba(3, 10, 27, 70%);
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       text-align: center;
       margin-top: 10px;
     }
@@ -573,7 +551,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-direction: row;
     gap: 15px;
     margin-top: 26px;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       margin: 0;
     }
   }
@@ -602,7 +580,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-direction: row;
     justify-content: start;
     gap: 174px;
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       display: none;
     }
   }
@@ -613,7 +591,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     justify-content: start;
   }
   &__menu-head {
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     font-size: 1.375em;
     margin-top: 10px;
     line-height: 33px;
@@ -638,7 +616,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     &_internet {
       margin-top: 10px;
       text-decoration: none;
-      font-family: poppinsMedium;
+      font-weight: 500;
       color: rgba(3, 10, 27, 70%);
     }
     &_phone {
@@ -654,11 +632,11 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Sections headers ---------------------------------------------------------------------------------
 
 .section-header {
-  font-family: poppinsSemiBold;
+  font-weight: 600;
   font-size: 2.75em;
   line-height: 66px;
   color: #030A1B;
-  @media (max-width: $md4) {
+  @media (max-width: variables.$md4) {
     font-size: 1.75em;
   }
 }
@@ -666,7 +644,8 @@ $textColor: rgba(3, 10, 27, 0.7);
 //Buttons ------------------------------------------------------------------------------------------
 
 .button {
-  font-family: poppinsMedium;
+  font-family: "Poppins";
+  font-weight: 500;
   line-height: 24px;
   border: none;
   background-color: #2E6EFF;
@@ -704,7 +683,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     align-items: center;
   }
   &__name {
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     font-size: 1.375em;
     margin: 0 5px 0 0;
   }
@@ -770,7 +749,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &__price {
     margin: auto 10px auto 0;
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     font-size: 1.375em;
     color: #FE753F;
     &::before {
@@ -810,7 +789,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     border-radius: 5px;
   }
   &__header {
-    font-family: poppinsSemiBold;
+    font-weight: 600;
     font-size: 1.375em;
     margin: 10px 0 -5px 0;
   }
@@ -856,7 +835,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     flex-direction: column;
     &-name {
       margin: 5px 0 5px 0;
-      font-family: poppinsSemiBold;
+      font-weight: 600;
       font-size: 1.375em;
     }
     &-position {
@@ -900,7 +879,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 
 .menu {
   &__body {
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       position: fixed;
       width: 50%;
       height: 100vh;
@@ -916,19 +895,21 @@ $textColor: rgba(3, 10, 27, 0.7);
     justify-content: space-between;
     align-items: center;
     gap: 50px;
-    @media (max-width: $md2) {
+    @media (max-width: variables.$md2) {
       gap: 25px;
     }
-    @media (max-width: $md3) {
+    @media (max-width: variables.$md3) {
       flex-direction: column;
     }
   }
   &__link {
     text-decoration: none;
-    color: $textColor;
+    font-weight: 500;
+    color: variables.$textColorGeneral;
+    white-space: nowrap;
     &_active {
       text-decoration: none;
-      font-family: poppinsSemiBold;
+      font-weight: 600;
       color: #FE753F;
     }
     &_button {
@@ -941,7 +922,7 @@ $textColor: rgba(3, 10, 27, 0.7);
       justify-content: center;
       align-items: center;
       color: #ffffff;
-      @media (max-width: $md2) {
+      @media (max-width: variables.$md2) {
         width: 120px;
         min-width: 120px;
       }
@@ -952,7 +933,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 
 
 .menu__body {
-  @media (max-width: $md3) {
+  @media (max-width: variables.$md3) {
 
     overflow: auto;
     top: 0;
@@ -993,7 +974,7 @@ $textColor: rgba(3, 10, 27, 0.7);
 
 .icon-menu {
 	display: none;
-	@media (max-width: $md3) {
+	@media (max-width: variables.$md3) {
     position: relative;
 		display: block;
 		flex: 0 0 30px;
@@ -1056,7 +1037,7 @@ $textColor: rgba(3, 10, 27, 0.7);
     }
   }
   &__header {
-    color: $textColor;
+    color: variables.$textColorGeneral;
     cursor: pointer;
     &::after {
       content: url('../src/assets/img/bird.svg');
@@ -1065,7 +1046,7 @@ $textColor: rgba(3, 10, 27, 0.7);
   }
   &__text {
     margin: 0;
-    font-family: poppinsMedium;
+    font-weight: 500;
     font-size: 1.375em;
   }
   &__list {
@@ -1111,16 +1092,22 @@ $textColor: rgba(3, 10, 27, 0.7);
     left: -67px;
   }
   &__container {
-    //display: none;
+    display: none;
+    &_active {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 40px;
+      background-color: rgba(217, 215, 240, 0.98);
+      top: 110%;
+    }
   }
 }
 
-/*.slider {
-  display: block;
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  z-index: 5;
-  background-color: blue;
-}*/
+//noUiSlider styling
+
+.noUi-target {
+  flex: 1 0 0;
+}
