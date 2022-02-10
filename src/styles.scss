@@ -578,7 +578,7 @@
   &__navigation {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 174px;
     @media (max-width: variables.$md3) {
       display: none;
@@ -588,7 +588,7 @@
     max-width: 160px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
   }
   &__menu-head {
     font-weight: 600;
