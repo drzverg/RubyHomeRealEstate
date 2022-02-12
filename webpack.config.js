@@ -1,6 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   target: 'web',
@@ -34,6 +35,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
@@ -56,9 +58,6 @@ module.exports = {
                 plugins: [
                   [
                     "autoprefixer",
-                    {
-                      browsers:['ie >= 8', 'last 4 version']
-                    },
                   ],
                 ],
               },
@@ -80,5 +79,11 @@ module.exports = {
         type: 'asset/resource',
       },
     ]
-  }
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+    //minimize: true,         //Turn on if need minimizing in dev mode
+  },
 };
