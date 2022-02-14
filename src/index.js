@@ -1,6 +1,9 @@
 //Default layout import
 import "../src/layouts/default/default.js";
 
+//Blocks import
+import "../src/blocks/footer/footer.js";
+
 //Import Styles
 import '../src/styles.scss';
 
@@ -213,12 +216,12 @@ const menuButton = document.querySelector(".menu__link_button");
 iconMenu.addEventListener("click", function () {
   if (iconMenu.classList.contains("icon-menu_active")) {
     iconMenu.classList.remove("icon-menu_active");
-	  menuBody.classList.remove("menu__body_active");
+    menuBody.classList.remove("menu__body_active");
     setTimeout(() => {menuButton.classList.add("button", "menu__link_button");}, 100);
   } 
   else {
     iconMenu.classList.toggle("icon-menu_active");
-	  menuBody.classList.toggle("menu__body_active");
+    menuBody.classList.toggle("menu__body_active");
     menuButton.classList.remove("button", "menu__link_button");
   }
 });

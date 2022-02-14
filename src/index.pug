@@ -171,33 +171,4 @@ html(lang='en')
         form.subscribe__form(action="#" method="get")
           input.subscribe__input(type="email", name="mail", placeholder="Enter email address") 
           button.subscribe__button.button(type="submit") Subscribe
-    footer.footer.content-wrapper
-      .footer__socials
-        a(href='index.html')
-          img.footer__logo(src='./assets/img/logo.svg' alt='RubyHome logo')
-        p.footer__socials-desc Contrary to popular  is not simply random text. It has 
-        .footer__socials-links 
-          a(href='https://www.facebook.com/' target='_blank').footer__socials-btn.icon-font.icon-font_facebook
-          a(href='https://www.instagram.com/' target='_blank').footer__socials-btn.icon-font.icon-font_instagram
-          a(href='https://twitter.com/' target='_blank').footer__socials-btn.icon-font.icon-font_twitter 
-          a(href='https://www.youtube.com/' target='_blank').footer__socials-btn.icon-font.icon-font_youtube 
-          a(href='https://www.linkedin.com/' target='_blank').footer__socials-btn.icon-font.icon-font_linkedin  
-      .footer__navigation 
-        nav.footer__menu 
-          p.footer__menu-head About
-          a(href='#').footer__link Company
-          a(href='#').footer__link Team
-          a(href='#').footer__link Career
-          a(href='#').footer__link Blogs
-        nav.footer__menu 
-          p.footer__menu-head Products
-          a(href='#').footer__link E-Books
-          a(href='#').footer__link Preasantation
-          a(href='#').footer__link Management
-          a(href='#').footer__link Dashboard
-        .footer__menu
-          p.footer__menu-head Address
-          p.footer__address Country Delevery
-          p.footer__address Counter Beach Post
-          a(href='#' target='_blank').footer__address_internet www.itobd.com
-          a(href='tel:+880176565655').footer__address_phone +880176565655
+    include /blocks/footer/footer
