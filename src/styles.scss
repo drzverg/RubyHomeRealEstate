@@ -31,7 +31,7 @@
     margin-top: 10vh;
     min-height: 80vh;
   }
-  &__description {
+  &__desc {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -40,7 +40,7 @@
       align-items: center;
     }
   }
-  &__header {
+  &__title {
     font-weight: 600;
     font-size: 3.813em;
     line-height: 120%;
@@ -59,7 +59,7 @@
       font-size: 2em;
     }
   }
-  &__search-btn_general {
+  &__link {
     @media (min-width: variables.$md3) {
       display: none;
     }
@@ -92,12 +92,12 @@
     @media (max-width: variables.$md3) {
       color: #000000;
       text-align: center;
-      margin-bottom: 20%;
+      margin-bottom: 30%;
       position: relative;
       z-index: 3;
     }
   }
-  &__overlay {
+  &__quick-search {
     position: relative;
     margin-top: 6.4%;
     @media (max-width: variables.$md3) {
@@ -141,12 +141,17 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    height: 70%;
-    width: 100%;
+    height: 125px;
+    width: 842px;
     background-color: #FFFFFF;
     border-radius: 0 5px 5px 5px;
     z-index: 1;
     box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+    @media (max-width: variables.$md1) {
+      width: 767px;
+      padding: 31px 5px;
+
+    }
   }
   &__search-btn {
     width: 120px;
@@ -167,7 +172,9 @@
     }
   }
   &__img {
-    max-height: 615px;
+    @media (max-width: variables.$md1) {
+      width: 242px;
+    }
     @media (max-width: variables.$md3) {
       display: none;
     }
@@ -190,6 +197,9 @@
       height: 52px;
       top: -1%;
       left: 1%;
+    }
+    @media (max-width: variables.$md1) {
+      margin-top: 200px;
     }
   }
   &__nav {
@@ -338,6 +348,10 @@
     gap: 26px;
     &_active {
       display: flex;
+      @media (max-width: variables.$md1) {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   }
   &__slider-dots {
@@ -356,10 +370,6 @@
     &_active {
       background-color: #2E6EFF;
     }
-  }
-   //Temporary
-   @media (max-width: variables.$md3) {
-    display: none;
   }
 }
 
@@ -484,7 +494,7 @@
 
 //Blocks ==================================================================================================================================++=========
 
-//Sections headers ---------------------------------------------------------------------------------
+//Sections titles ---------------------------------------------------------------------------------
 
 .section-header {
   font-weight: 600;
@@ -666,6 +676,10 @@
   height: 200px;
   max-height: 200px;
   position: relative;
+  @media (max-width: variables.$md1) {
+    height: 150px;
+    width: 95%;
+  }
   &::before {
     content: "\e902";
     font-family: icons;
@@ -743,11 +757,17 @@
   position: relative;
   &:nth-child(1) {
     flex: 0 0 139px;
+    @media (max-width: variables.$md1) {
+      flex: 0 0 129px;
+    }
   }
   &:nth-child(2) {
     box-sizing: border-box;
     margin-left: 67px;
     flex: 0 0 175px;
+    @media (max-width: variables.$md1) {
+      flex: 0 0 160px;
+    }
     &::before {
       content: url('../src/assets/img/line.svg');
       position: absolute;
@@ -767,6 +787,9 @@
     margin: 0;
     font-weight: 500;
     font-size: 1.375em;
+    @media (max-width: variables.$md1) {
+      font-size: 1em;;
+    }
   }
   &__list {
     margin-top: 20px;
@@ -805,6 +828,9 @@
   flex: 0 0 180px;
   position: relative;
   margin-left: 67px;
+  @media (max-width: variables.$md1) {
+    flex: 0 0 170px;
+  }
   &::before {
     content: url('../src/assets/img/line.svg');
     position: absolute;
