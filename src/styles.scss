@@ -209,6 +209,9 @@
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
+    @media (max-width: variables.$md3) {
+      gap: 25px;
+    }
   }
   &__link {
     @media (max-width: variables.$md2) {
@@ -327,18 +330,23 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-  &__section-header {
-    width: 650px;
-    margin: 10px auto 68px auto;
-    text-align: center;
-    position: relative;
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 68px;
+    @media (max-width: variables.$md3) {
+      margin-bottom: 10px;
+    }
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
-      position: absolute;
+      margin-right: -30px;
       width: 40.48px;
       height: 52.44px;
-      top: -1%;
-      left: 0%;
+      @media (max-width: variables.$md3) {
+        display: none;
+      }
     }
   }
   &__block {
@@ -674,11 +682,11 @@
   border-radius: 10px;
   padding: 30px 40px 30px 30px;
   height: 200px;
-  max-height: 200px;
   position: relative;
   @media (max-width: variables.$md1) {
-    height: 150px;
+    height: fit-content;
     width: 95%;
+    padding: 10px;
   }
   &::before {
     content: "\e902";
