@@ -2588,43 +2588,103 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/* harmony import */ var _src_assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(522);
-/* harmony import */ var _src_assets_img_favicon_ico__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(687);
-/* harmony import */ var _src_assets_img_main_section_img_cover_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(329);
-/* harmony import */ var _src_assets_img_main_section_img_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(319);
-/* harmony import */ var _src_assets_img_feautured_img_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(984);
-/* harmony import */ var _src_assets_img_line_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(158);
-/* harmony import */ var _src_assets_img_biotech_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(824);
-/* harmony import */ var _src_assets_img_express_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(700);
-/* harmony import */ var _src_assets_img_smilehome_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(572);
-/* harmony import */ var _src_assets_img_connect_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(316);
-/* harmony import */ var _src_assets_img_homebuild_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(957);
-/* harmony import */ var _src_assets_img_properties_banyon_tree_realty_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(353);
-/* harmony import */ var _src_assets_img_properties_capital_hill_residence_jpg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(901);
-/* harmony import */ var _src_assets_img_properties_picket_fence_realty_jpg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(976);
-/* harmony import */ var _src_assets_img_properties_corsair_real_estate_jpg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(210);
-/* harmony import */ var _src_assets_img_properties_sequoia_real_estate_jpg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(47);
-/* harmony import */ var _src_assets_img_properties_strive_partners_realty_jpg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(123);
-/* harmony import */ var _src_assets_img_security_ico_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(247);
-/* harmony import */ var _src_assets_img_air_ico_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(14);
-/* harmony import */ var _src_assets_img_garden_ico_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(996);
-/* harmony import */ var _src_assets_img_parking_ico_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(233);
-/* harmony import */ var _src_assets_img_furniture_ico_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(500);
-/* harmony import */ var _src_assets_img_pool_ico_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(934);
-/* harmony import */ var _src_assets_img_reviewers_acathe_jpg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(761);
-/* harmony import */ var _src_assets_img_reviewers_jlee_jpg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(183);
-/* harmony import */ var _src_assets_img_reviewers_rev_1_fem_jpg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(866);
-/* harmony import */ var _src_assets_img_reviewers_rev_1_m_jpg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(67);
-/* harmony import */ var _src_assets_img_reviewers_rev_2_fem_jpg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(953);
-/* harmony import */ var _src_assets_img_reviewers_rev_2_m_jpg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(903);
-/* harmony import */ var _src_assets_img_reviewers_rev_3_fem_jpg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(55);
-/* harmony import */ var _src_assets_img_reviewers_rev_3_m_jpg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(165);
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(211);
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_31__);
-//Default layout import
+
+;// CONCATENATED MODULE: ./src/blocks/header/header.js
+
+
+//Burger menu
+const iconMenu = document.querySelector(".icon-menu");
+const menuBody = document.querySelector(".header-menu__body");
+const menuButton = document.querySelector(".header-menu__link_button");
+
+iconMenu.addEventListener("click", function () {
+  if (iconMenu.classList.contains("icon-menu_active")) {
+    iconMenu.classList.remove("icon-menu_active");
+    menuBody.classList.remove("header-menu__body_active");
+    setTimeout(() => {menuButton.classList.add("button", "header-menu__link_button");}, 100);
+  } 
+  else {
+    iconMenu.classList.toggle("icon-menu_active");
+    menuBody.classList.toggle("header-menu__body_active");
+    menuButton.classList.remove("button", "header-menu__link_button");
+  }
+});
+;// CONCATENATED MODULE: ./src/layouts/default/default.js
+//Default styles import
 
 
 //Blocks import
+
+
+// EXTERNAL MODULE: ./src/assets/img/logo.svg
+var logo = __webpack_require__(522);
+// EXTERNAL MODULE: ./src/assets/img/favicon.ico
+var favicon = __webpack_require__(687);
+// EXTERNAL MODULE: ./src/assets/img/main-section-img-cover.jpg
+var main_section_img_cover = __webpack_require__(329);
+// EXTERNAL MODULE: ./src/assets/img/main-section-img.jpg
+var main_section_img = __webpack_require__(319);
+// EXTERNAL MODULE: ./src/assets/img/feautured-img.jpg
+var feautured_img = __webpack_require__(984);
+// EXTERNAL MODULE: ./src/assets/img/line.svg
+var line = __webpack_require__(158);
+// EXTERNAL MODULE: ./src/assets/img/biotech.svg
+var biotech = __webpack_require__(824);
+// EXTERNAL MODULE: ./src/assets/img/express.svg
+var express = __webpack_require__(700);
+// EXTERNAL MODULE: ./src/assets/img/smilehome.svg
+var smilehome = __webpack_require__(572);
+// EXTERNAL MODULE: ./src/assets/img/connect.svg
+var connect = __webpack_require__(316);
+// EXTERNAL MODULE: ./src/assets/img/homebuild.svg
+var homebuild = __webpack_require__(957);
+// EXTERNAL MODULE: ./src/assets/img/properties/banyon-tree-realty.jpg
+var banyon_tree_realty = __webpack_require__(353);
+// EXTERNAL MODULE: ./src/assets/img/properties/capital-hill-residence.jpg
+var capital_hill_residence = __webpack_require__(901);
+// EXTERNAL MODULE: ./src/assets/img/properties/picket-fence-realty.jpg
+var picket_fence_realty = __webpack_require__(976);
+// EXTERNAL MODULE: ./src/assets/img/properties/corsair-real-estate.jpg
+var corsair_real_estate = __webpack_require__(210);
+// EXTERNAL MODULE: ./src/assets/img/properties/sequoia-real-estate.jpg
+var sequoia_real_estate = __webpack_require__(47);
+// EXTERNAL MODULE: ./src/assets/img/properties/strive-partners-realty.jpg
+var strive_partners_realty = __webpack_require__(123);
+// EXTERNAL MODULE: ./src/assets/img/security_ico.svg
+var security_ico = __webpack_require__(247);
+// EXTERNAL MODULE: ./src/assets/img/air_ico.svg
+var air_ico = __webpack_require__(14);
+// EXTERNAL MODULE: ./src/assets/img/garden_ico.svg
+var garden_ico = __webpack_require__(996);
+// EXTERNAL MODULE: ./src/assets/img/parking_ico.svg
+var parking_ico = __webpack_require__(233);
+// EXTERNAL MODULE: ./src/assets/img/furniture_ico.svg
+var furniture_ico = __webpack_require__(500);
+// EXTERNAL MODULE: ./src/assets/img/pool_ico.svg
+var pool_ico = __webpack_require__(934);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/acathe.jpg
+var acathe = __webpack_require__(761);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/jlee.jpg
+var jlee = __webpack_require__(183);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_1_fem.jpg
+var rev_1_fem = __webpack_require__(866);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_1_m.jpg
+var rev_1_m = __webpack_require__(67);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_2_fem.jpg
+var rev_2_fem = __webpack_require__(953);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_2_m.jpg
+var rev_2_m = __webpack_require__(903);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_3_fem.jpg
+var rev_3_fem = __webpack_require__(55);
+// EXTERNAL MODULE: ./src/assets/img/reviewers/rev_3_m.jpg
+var rev_3_m = __webpack_require__(165);
+// EXTERNAL MODULE: ./node_modules/nouislider/dist/nouislider.js
+var nouislider = __webpack_require__(211);
+var nouislider_default = /*#__PURE__*/__webpack_require__.n(nouislider);
+;// CONCATENATED MODULE: ./src/index.js
+//Default layout import
+
+
 
 
 //Import Styles
@@ -2677,7 +2737,7 @@ var __webpack_exports__ = {};
 
 var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
 
-nouislider__WEBPACK_IMPORTED_MODULE_31___default().create(nonLinearStepSlider, {
+nouislider_default().create(nonLinearStepSlider, {
     start: [500, 4000],
     range: {
         'min': [0],
@@ -2830,24 +2890,6 @@ function showUp(target) {
     }
   })
 }
-
-//Burger menu
-const iconMenu = document.querySelector(".icon-menu");
-const menuBody = document.querySelector(".menu__body");
-const menuButton = document.querySelector(".menu__link_button");
-
-iconMenu.addEventListener("click", function () {
-  if (iconMenu.classList.contains("icon-menu_active")) {
-    iconMenu.classList.remove("icon-menu_active");
-    menuBody.classList.remove("menu__body_active");
-    setTimeout(() => {menuButton.classList.add("button", "menu__link_button");}, 100);
-  } 
-  else {
-    iconMenu.classList.toggle("icon-menu_active");
-    menuBody.classList.toggle("menu__body_active");
-    menuButton.classList.remove("button", "menu__link_button");
-  }
-});
 })();
 
 /******/ })()

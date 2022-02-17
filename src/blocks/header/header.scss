@@ -1,0 +1,135 @@
+@use "../../layouts/default/default.scss" as variables;
+
+.header {
+  box-sizing: border-box;
+  margin-top: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: variables.$md3) {
+    margin-top: 10px;
+    min-height: 10vh;
+  }
+  &__logo {
+    display: flex;
+    width: 250px;
+    height: 65px;
+    overflow: hidden;
+    @media (max-width: variables.$md4) {
+      width: 200px;
+      height: 52px;
+    }
+  }
+}
+
+//Header menu ========================================================================================================================================
+
+.header-menu {
+  &__body {
+    @media (max-width: variables.$md3) {
+      position: fixed;
+      width: 50%;
+      height: 100vh;
+      background: rgba(120, 115, 182, 0.98);
+      overflow: auto;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease 0s;
+      padding: 70px 15px 30px 15px;
+      z-index: 5;
+      &_active {
+        left: 0;
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+  &__list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    @media (max-width: variables.$md2) {
+      gap: 25px;
+    }
+    @media (max-width: variables.$md3) {
+      flex-direction: column;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    color: variables.$textColorGeneral;
+    white-space: nowrap;
+    &_active {
+      text-decoration: none;
+      font-weight: 600;
+      color: #FE753F;
+    }
+    &_button {
+      width: 149px;
+      min-width: 149px;
+      height: 54px;
+      min-height: 54px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      @media (max-width: variables.$md2) {
+        width: 120px;
+        min-width: 120px;
+      }
+    }
+  }
+}
+
+//Burger menu button==================================================================================================================================
+
+.icon-menu {
+	display: none;
+	@media (max-width: variables.$md3) {
+    position: relative;
+		display: block;
+		flex: 0 0 30px;
+    background-color: transparent;
+    border: none;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 1px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: rgb(167, 49, 49);
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&_active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}

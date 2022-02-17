@@ -39,26 +39,7 @@ html(lang='en')
     title Ruby Home
     link(rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon')
   body.site-wrapper
-    header.header.content-wrapper
-      a(href="index.html")
-        img.header__logo(src='./assets/img/logo.svg' alt='RubyHome logo')
-      .header__menu.menu
-        nav.menu__body
-          ul.menu__list
-            li.menu__item
-              a.menu__link_active(href='#') Home
-            li.menu__item   
-              a.menu__link(href='#') Properties
-            li.menu__item 
-              a.menu__link(href='#') About us
-            li.menu__item 
-              a.menu__link(href='#') Blog
-            li.menu__item  
-              a.menu__link.menu__link_button.button(href='#') Contact us
-      button(type='button').icon-menu
-        span 
-        span 
-        span
+    include /blocks/header/header
     main.content-wrapper
       .background-picture 
       section.main-section 
