@@ -28,8 +28,11 @@
   margin-top: 68px;
   gap: 20px;
   @media (max-width: variables.$md3) {
-    margin-top: 10vh;
-    min-height: 80vh;
+    box-sizing: border-box;
+    margin-top: 0;
+    height: 90vh;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
   }
   &__desc {
     display: flex;
@@ -49,11 +52,11 @@
       font-size: 3em;
     }
     @media (max-width: variables.$md3) {
-      font-family: poppinsSemiBold;
       font-size: 3em;
       text-align: center;
       position: relative;
-      z-index: 3;
+      z-index: 2;
+      margin: 0 5px;
     }
     @media (max-width: variables.$md4) {
       font-size: 2em;
@@ -75,7 +78,7 @@
       gap: 10px;
       text-decoration: none;
       position: relative;
-      z-index: 3;
+      z-index: 2;
       border-radius: 5px;
       &::before {
         content: url('../src/assets/img/search_ico.svg');
@@ -92,9 +95,9 @@
     @media (max-width: variables.$md3) {
       color: #000000;
       text-align: center;
-      margin-bottom: 30%;
       position: relative;
-      z-index: 3;
+      z-index: 2;
+      margin: 0 5px;
     }
   }
   &__quick-search {
@@ -183,26 +186,30 @@
 
 //"Our Partners" section =============================================================================================================================
 
-.partners-section {
-  &__header {
-    width: 300px;
-    margin: 100px auto 65px auto;
+.partners {
+  margin-top: 100px;
+  @media (max-width: variables.$md3) {
+    margin-top: 20px;
+  }
+  &__title {
+    margin: 0 auto;
+    width: fit-content;
     text-align: center;
     position: relative;
-    z-index: 1;
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
       position: absolute;
       width: 40.48px;
       height: 52px;
-      top: -1%;
-      left: 1%;
-    }
-    @media (max-width: variables.$md1) {
-      margin-top: 200px;
+      top: -3%;
+      left: -3%;
+      @media (max-width: variables.$md3) {
+        display: none;
+      }
     }
   }
   &__nav {
+    margin-top: 65px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -211,6 +218,7 @@
     flex-wrap: wrap;
     @media (max-width: variables.$md3) {
       gap: 25px;
+      margin-top: 20px;
     }
   }
   &__link {
@@ -223,8 +231,9 @@
 //"Popular Properties" section =======================================================================================================================
 
 .popular {
+  margin-top: 133px;
   &__header-container {
-    margin: 130px 0 75px 0;
+    margin: 0 0 71px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -254,7 +263,7 @@
     grid-template-columns: repeat(auto-fill, minmax(362px, 1fr));
     justify-items: center;
     grid-template-rows: 1fr 1fr; 
-    gap: 2% 2%;
+    gap: 30px;
   }
    //Temporary
    @media (max-width: variables.$md3) {
@@ -266,13 +275,13 @@
 
 .featured {
   min-height: 1000px;
-  margin-top: 140px;
+  margin-top: 209px;
   background-color: #F9F9F9;
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
   padding-top: 1px;
   &__section-header {
     width: 550px;
-    margin: 65px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     position: relative;
     &::before {
@@ -286,7 +295,7 @@
   }
   &__section-description {
     max-width: 728px;
-    margin: 15px auto 70px auto;
+    margin: 10px auto 70px auto;
     color: rgba(3, 10, 27, 70%);
     text-align: center;
   }
@@ -320,8 +329,21 @@
 //"Reviews" section ==================================================================================================================================
 
 .reviews {
+  margin-top: 70px;
+  @media (max-width: variables.$md3) {
+    margin-top: 20px;
+  }
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 68px;
+    @media (max-width: variables.$md3) {
+      gap: 20px;
+      flex-direction: column-reverse;
+      margin-bottom: 20px;
+    }
+  }
   &__link {
-    margin-top: 140px;
     display: block;
     font-weight: 600;
     color: #FE753F;
@@ -331,17 +353,15 @@
     letter-spacing: 1px;
   }
   &__title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 68px;
-    @media (max-width: variables.$md3) {
-      margin-bottom: 10px;
-    }
+    margin: 10px auto 0 auto;
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
-      margin-right: -30px;
+      position: absolute;
+      left: -1.4%;
       width: 40.48px;
       height: 52.44px;
       @media (max-width: variables.$md3) {
@@ -358,7 +378,7 @@
       display: flex;
       @media (max-width: variables.$md1) {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
       }
     }
   }
@@ -368,6 +388,9 @@
     flex-direction: row;
     gap: 10px;
     justify-content: center;
+    @media (max-width: variables.$md3) {
+      margin-top: 20px;
+    }
   }
   &__slider-dot {
     cursor: pointer;
@@ -392,12 +415,12 @@
   margin-top: 140px;
   padding: 70px 10px 70px 10px;
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  @media (max-width: variables.$md4) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  @media (max-width: variables.$md3) {
+    margin-top: 20px;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //gap: 30px;
   }
   &::before {
     content: "";
@@ -429,12 +452,15 @@
       display: none;
     }
   }
-  &__header {
+  &__title {
     margin: 0 auto 12px auto;
     font-size: 2.75em;
     line-height: 60px;
     color: #FFFFFF;
     text-align: center;
+    @media (max-width: variables.$md3) {
+      line-height: 44px;
+    }
     @media (max-width: variables.$md4) {
       font-size: 1.75em;
       line-height: 30px;
@@ -457,11 +483,14 @@
     margin-top: 70px;
     background-color: #FFFFFF;
     border: 1px solid;
-    @media (max-width: variables.$md4) {
-      flex-direction: column;
-      background-color: transparent;
+    @media (max-width: variables.$md3) {
       width: 100%;
-      margin-top: 20px;
+    }
+    @media (max-width: variables.$md4) {
+      //flex-direction: column;
+      //background-color: transparent;
+      //width: 100%;
+      //margin-top: 20px;
     }
   }
   &__input {
@@ -475,10 +504,10 @@
     font-size: 1em;
     color: rgba(3, 10, 27, 70%);
     @media (max-width: variables.$md4) {
-      padding-left: 10px;
-      padding-right: 10px;
-      height: 30px;
-      border-radius: 10px;
+      //padding-left: 10px;
+      //padding-right: 10px;
+      //height: 30px;
+      //border-radius: 10px;
     }
   }
   
@@ -489,14 +518,10 @@
     margin: auto 7px auto 7px;
     font-size: 1em;
     @media (max-width: variables.$md4) {
-      height: 60px;
-      margin: 20px auto auto auto;
+      //height: 60px;
+      //margin: 20px auto auto auto;
     }
   }
-    //Temporary
-    @media (max-width: variables.$md3) {
-      display: none;
-    }
 }
 
 
@@ -509,6 +534,9 @@
   font-size: 2.75em;
   line-height: 66px;
   color: #030A1B;
+  @media (max-width: variables.$md3) {
+    line-height: 44px;
+  }
   @media (max-width: variables.$md4) {
     font-size: 1.75em;
   }
@@ -517,6 +545,7 @@
 //Buttons ------------------------------------------------------------------------------------------
 
 .button {
+  box-sizing: border-box;
   font-family: "Poppins";
   font-weight: 500;
   line-height: 24px;
@@ -696,6 +725,9 @@
     font-size: 56px;
     left: 83.5%;
     top: 15%;
+    @media (max-width: variables.$md1) {
+      display: none;
+    }
   }
   &__header {
     display: flex;

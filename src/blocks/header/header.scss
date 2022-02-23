@@ -7,9 +7,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
   @media (max-width: variables.$md3) {
     margin-top: 10px;
-    min-height: 10vh;
+    margin-bottom: 10px;
+    height: 10vh;
   }
   &__logo {
     display: flex;

@@ -88,18 +88,18 @@ html(lang='en')
                     #slider-non-linear-step
                 button.main-section__search-btn.button Search
         img.main-section__img(src='./assets/img/main-section-img.jpg')
-      section.partners-section
-        h2.section-header.partners-section__header Our Partners 
-        .partners-section__nav
-          a.partners-section__link(href="#")
+      section.partners
+        h2.section-header.partners__title Our Partners 
+        .partners__nav
+          a.partners__link(href="#")
             img(src='./assets/img/biotech.svg')
-          a.partners-section__link(href="#")
+          a.partners__link(href="#")
             img(src='./assets/img/express.svg')
-          a.partners-section__link(href="#")
+          a.partners__link(href="#")
             img(src='./assets/img/smilehome.svg')
-          a.partners-section__link(href="#")
+          a.partners__link(href="#")
             img(src='./assets/img/connect.svg')
-          a.partners-section__link(href="#")
+          a.partners__link(href="#")
             img(src='./assets/img/homebuild.svg')
       section.popular
         .popular__header-container
@@ -126,8 +126,9 @@ html(lang='en')
             +featured('./assets/img/furniture_ico.svg', 'Rental furniture', 'For many of us, buying a home is a dre and one not easily attainable.')
             +featured('./assets/img/pool_ico.svg', 'Swimming pool', 'For many of us, buying a home is a dre and one not easily attainable.')
       section.reviews
-        a.reviews__link(href='#') Reviews 
-        h2.section-header.reviews__title Our valuable customer says
+        .reviews__title-container
+          a.reviews__link(href='#') Reviews 
+          h2.section-header.reviews__title Our valuable customer says
         .reviews__slider 
           .reviews__block.reviews__block_active
             +review('./assets/img/reviewers/jlee.jpg', 'Justin Lee', 'Products Designer at Ito', 'A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money. Been there. Done that. Sold. Bought Bringing It All Together.')
@@ -147,7 +148,7 @@ html(lang='en')
             .reviews__slider-dot
             .reviews__slider-dot
       section.subscribe
-        h2.subscribe__header Get listed your home as a owner
+        h2.subscribe__title Get listed your home as a owner
         p.subscribe__text Here is a list of the greatest real estate company slogans of all-time. These catchy slogans are followed by the Greatest Real Estate.
         form.subscribe__form(action="#" method="get")
           input.subscribe__input(type="email", name="mail", placeholder="Enter email address") 
