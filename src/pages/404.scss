@@ -1,0 +1,16 @@
+@use "../../src/layouts/default/default" as variables;
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    font-weight: 600;
+    font-size: 4em;
+    line-height: 150%;
+  }
+  &__text {
+    color: variables.$textColorGeneral;
+  }
+} 

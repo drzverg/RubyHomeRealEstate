@@ -120,3 +120,29 @@
     }
   } 
 }
+
+//Icons ==============================================================================================================================================
+
+.icon-font {
+  font-family: icons;
+  &_facebook:before {
+    content: "\e904";
+    color: #FFFFFF;
+  }
+  &_instagram:before {
+    content: "\e909";
+    color: #FFFFFF;
+  }
+  &_twitter:before {
+    content: "\e90f";
+    color: #FFFFFF;
+  }
+  &_youtube:before {
+    content: "\e910";
+    color: #FFFFFF;
+  }
+  &_linkedin:before {
+    content: "\e908";
+    color: #FFFFFF;
+  }
+}

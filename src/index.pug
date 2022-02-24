@@ -1,3 +1,5 @@
+extends /layouts/default/default.pug
+
 mixin popular(img, name, place, bedroom, dining, bathroom, price)
   .property-card
     img.property-card__photo(src= img alt= name+' preview photo')
@@ -30,22 +32,13 @@ mixin review(photo, name, position, review)
         p.review-card__person-position= position
     p.review-card__review-text= review
 
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Ruby Home
-    link(rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon')
-  body.site-wrapper
-    include /blocks/header/header
+block content
     main.content-wrapper
       .background-picture 
       section.main-section 
         .main-section__desc
           h1.main-section__title Find the perfect place to stay with your family
-          a.main-section__link.button(href='#') Search
+          a.main-section__link.button(href='404.html') Search
           p.main-section__text Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.
           .main-section__quick-search
             form(onsubmit="return false").main-section__search
@@ -91,15 +84,15 @@ html(lang='en')
       section.partners
         h2.section-header.partners__title Our Partners 
         .partners__nav
-          a.partners__link(href="#")
+          a.partners__link(href='404.html')
             img(src='./assets/img/biotech.svg')
-          a.partners__link(href="#")
+          a.partners__link(href='404.html')
             img(src='./assets/img/express.svg')
-          a.partners__link(href="#")
+          a.partners__link(href='404.html')
             img(src='./assets/img/smilehome.svg')
-          a.partners__link(href="#")
+          a.partners__link(href='404.html')
             img(src='./assets/img/connect.svg')
-          a.partners__link(href="#")
+          a.partners__link(href='404.html')
             img(src='./assets/img/homebuild.svg')
       section.popular
         .popular__header-container
@@ -153,4 +146,3 @@ html(lang='en')
         form.subscribe__form(action="#" method="get")
           input.subscribe__input(type="email", name="mail", placeholder="Enter email address") 
           button.subscribe__button.button(type="submit") Subscribe
-    include /blocks/footer/footer

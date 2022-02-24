@@ -6,7 +6,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   target: 'web',
   entry: {
-    default: "./src/index.js"
+    default: "./src/layouts/default/default.js",
+    index: "./src/index.js",
+    error: "./src/pages/404.js"
   },
   output: {
     filename: '[name].js',
@@ -30,7 +32,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.pug',
+      filename: 'index.html',
+      chunks: ["default", "index"]  
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/404.pug',
+      filename: '404.html',
+      chunks: ["default", "error"]  
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css'

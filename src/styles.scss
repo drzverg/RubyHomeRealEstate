@@ -542,21 +542,6 @@
   }
 }
 
-//Buttons ------------------------------------------------------------------------------------------
-
-.button {
-  box-sizing: border-box;
-  font-family: "Poppins";
-  font-weight: 500;
-  line-height: 24px;
-  border: none;
-  background-color: #2E6EFF;
-  color: #FFFFFF;
-  &:active {
-    background-color: #FE753F;
-  }
-}
-
 //Dropdowns ----------------------------------------------------------------------------------------
 .dropdown-opened {
   height: auto;
@@ -760,31 +745,7 @@
   }
 }
 
-//Icons ==============================================================================================================================================
 
-.icon-font {
-  font-family: icons;
-  &_facebook:before {
-    content: "\e904";
-    color: #FFFFFF;
-  }
-  &_instagram:before {
-    content: "\e909";
-    color: #FFFFFF;
-  }
-  &_twitter:before {
-    content: "\e90f";
-    color: #FFFFFF;
-  }
-  &_youtube:before {
-    content: "\e910";
-    color: #FFFFFF;
-  }
-  &_linkedin:before {
-    content: "\e908";
-    color: #FFFFFF;
-  }
-}
 
 
 

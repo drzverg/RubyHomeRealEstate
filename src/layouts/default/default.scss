@@ -56,3 +56,18 @@
     margin-right: 10px;
   }
 }
+
+//Buttons ------------------------------------------------------------------------------------------
+
+.button {
+  box-sizing: border-box;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 24px;
+  border: none;
+  background-color: #2E6EFF;
+  color: #FFFFFF;
+  &:active {
+    background-color: #FE753F;
+  }
+}
