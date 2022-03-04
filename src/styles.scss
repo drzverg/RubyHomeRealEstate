@@ -55,7 +55,7 @@
       font-size: 3em;
       text-align: center;
       position: relative;
-      z-index: 2;
+      z-index: 1;
       margin: 0 5px;
     }
     @media (max-width: variables.$md4) {
@@ -78,7 +78,7 @@
       gap: 10px;
       text-decoration: none;
       position: relative;
-      z-index: 2;
+      z-index: 1;
       border-radius: 5px;
       &::before {
         content: url('../src/assets/img/search_ico.svg');
@@ -96,7 +96,7 @@
       color: #000000;
       text-align: center;
       position: relative;
-      z-index: 2;
+      z-index: 1;
       margin: 0 5px;
     }
   }
@@ -177,6 +177,7 @@
   &__img {
     @media (max-width: variables.$md1) {
       width: 242px;
+      margin-bottom: 20vh;
     }
     @media (max-width: variables.$md3) {
       display: none;
@@ -189,7 +190,7 @@
 .partners {
   margin-top: 100px;
   @media (max-width: variables.$md3) {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   &__title {
     margin: 0 auto;
@@ -279,6 +280,12 @@
   background-color: #F9F9F9;
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
   padding-top: 1px;
+  @media (max-width: variables.$md3) {
+    margin-top: 30px;
+  }
+  @media (max-width: variables.$md3) {
+    min-height: fit-content;
+  }
   &__section-header {
     width: 550px;
     margin: 0 auto;
@@ -295,34 +302,39 @@
   }
   &__section-description {
     max-width: 728px;
-    margin: 10px auto 70px auto;
+    margin: 10px auto 0 auto;
     color: rgba(3, 10, 27, 70%);
     text-align: center;
   }
   &__content {
+    margin-top: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 5vw;
+    row-gap: 30px;
+    position: relative;
+    @media (max-width: variables.$md3) {
+      margin-top: 20px;
+      row-gap: 10px;
+    }
   }
-  &__grid-container {
-    display: grid; 
-    grid-auto-flow: column;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 30px;
+  &__image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: variables.$md3) {
+      display: none;
+    }
   }
   &__picture {
-    width: 100%;
     max-width: 362px;
-    height: 100%;
     max-height: 548px;
-    align-self: center;
-  }
-   //Temporary
-   @media (max-width: variables.$md3) {
-    display: none;
+    
   }
 }
 
@@ -331,7 +343,7 @@
 .reviews {
   margin-top: 70px;
   @media (max-width: variables.$md3) {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   &__title-container {
     display: flex;
@@ -407,20 +419,20 @@
 //Subscribe section ==================================================================================================================================
 
 .subscribe {
+  box-sizing: border-box;
   height: 403px;
-  width: auto;
+  width: 100%;
   background-color: #433E89;
   border-radius: 10px;
   position: relative;
   margin-top: 140px;
-  padding: 70px 10px 70px 10px;
-  box-sizing: border-box;
+  padding: 5px;
   @media (max-width: variables.$md3) {
-    margin-top: 20px;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    //gap: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
   }
   &::before {
     content: "";
@@ -453,12 +465,14 @@
     }
   }
   &__title {
-    margin: 0 auto 12px auto;
     font-size: 2.75em;
     line-height: 60px;
+    font-weight: 500;
     color: #FFFFFF;
     text-align: center;
+    margin-top: 65px;
     @media (max-width: variables.$md3) {
+      margin-top: 20px;
       line-height: 44px;
     }
     @media (max-width: variables.$md4) {
@@ -470,60 +484,52 @@
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     max-width: 635px;
-    margin: auto;
+    margin: 15px auto 0 auto;
+    @media (max-width: variables.$md3) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
   &__form {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     width: 743px;
     height: 70px;
+    background-color: #FFFFFF;
+    margin: 70px auto 10px auto;
     border-radius: 10px;
     overflow: hidden;
-    margin: auto;
-    margin-top: 70px;
-    background-color: #FFFFFF;
-    border: 1px solid;
+    padding: 7px;
     @media (max-width: variables.$md3) {
       width: 100%;
-    }
-    @media (max-width: variables.$md4) {
-      //flex-direction: column;
-      //background-color: transparent;
-      //width: 100%;
-      //margin-top: 20px;
+      margin: 0 auto;
     }
   }
   &__input {
-    flex-grow: 1;
+    box-sizing: border-box;
+    flex: 1 0 auto;
     border: none;
     outline: none;
     height: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-family: "Poppins";
     font-size: 1em;
+    padding: 0 25px;
     color: rgba(3, 10, 27, 70%);
-    @media (max-width: variables.$md4) {
-      //padding-left: 10px;
-      //padding-right: 10px;
-      //height: 30px;
-      //border-radius: 10px;
+    @media (max-width: variables.$md3) {
+      padding: 0 5px;
+      font-size: 0.85em;
     }
   }
-  
   &__button {
-    width: 162px;
-    height: 56px;
+    box-sizing: border-box;
+    flex: 0 1 162px;
     border-radius: 10px;
-    margin: auto 7px auto 7px;
-    font-size: 1em;
-    @media (max-width: variables.$md4) {
-      //height: 60px;
-      //margin: 20px auto auto auto;
+    @media (max-width: variables.$md3) {
+      padding: 5px;
+      font-size: 0.85em;
     }
   }
 }
-
 
 //Blocks ==================================================================================================================================++=========
 
@@ -667,6 +673,18 @@
   background-color: #FFFFFF;
   box-sizing: border-box;
   padding: 25px;
+  z-index: 5;
+  @media (max-width: variables.$md3) {
+    padding: 10px;
+    max-width: none;
+    width: 100%;
+    height: fit-content;
+  }
+  &__head {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
   &__icon {
     display: flex;
     align-items: center;
@@ -676,7 +694,7 @@
     background-color: rgba(254, 117, 63, 10%);
     border-radius: 5px;
   }
-  &__header {
+  &__title {
     font-weight: 600;
     font-size: 1.375em;
     margin: 10px 0 -5px 0;
@@ -744,10 +762,6 @@
     color: rgba(3, 10, 27, 70%);
   }
 }
-
-
-
-
 
 //Main section dropdowns =============================================================================================================================
 

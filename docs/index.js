@@ -2247,41 +2247,6 @@
 
 /***/ }),
 
-/***/ 399:
-/***/ (() => {
-
-"use strict";
-
-;// CONCATENATED MODULE: ./src/blocks/header/header.js
-
-
-//Burger menu
-const iconMenu = document.querySelector(".icon-menu");
-const menuBody = document.querySelector(".header-menu__body");
-const menuButton = document.querySelector(".header-menu__link_button");
-
-iconMenu.addEventListener("click", function () {
-  if (iconMenu.classList.contains("icon-menu_active")) {
-    iconMenu.classList.remove("icon-menu_active");
-    menuBody.classList.remove("header-menu__body_active");
-    setTimeout(() => {menuButton.classList.add("button", "header-menu__link_button");}, 100);
-  } 
-  else {
-    iconMenu.classList.toggle("icon-menu_active");
-    menuBody.classList.toggle("header-menu__body_active");
-    menuButton.classList.remove("button", "header-menu__link_button");
-  }
-});
-;// CONCATENATED MODULE: ./src/layouts/default/default.js
-//Default styles import
-
-
-//Blocks import
-
-
-
-/***/ }),
-
 /***/ 14:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2623,48 +2588,40 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/* harmony import */ var _src_layouts_default_default_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(399);
-/* harmony import */ var _src_assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(522);
-/* harmony import */ var _src_assets_img_favicon_ico__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(687);
-/* harmony import */ var _src_assets_img_main_section_img_cover_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(329);
-/* harmony import */ var _src_assets_img_main_section_img_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(319);
-/* harmony import */ var _src_assets_img_feautured_img_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(984);
-/* harmony import */ var _src_assets_img_line_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(158);
-/* harmony import */ var _src_assets_img_biotech_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(824);
-/* harmony import */ var _src_assets_img_express_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(700);
-/* harmony import */ var _src_assets_img_smilehome_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(572);
-/* harmony import */ var _src_assets_img_connect_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(316);
-/* harmony import */ var _src_assets_img_homebuild_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(957);
-/* harmony import */ var _src_assets_img_properties_banyon_tree_realty_jpg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(353);
-/* harmony import */ var _src_assets_img_properties_capital_hill_residence_jpg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(901);
-/* harmony import */ var _src_assets_img_properties_picket_fence_realty_jpg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(976);
-/* harmony import */ var _src_assets_img_properties_corsair_real_estate_jpg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(210);
-/* harmony import */ var _src_assets_img_properties_sequoia_real_estate_jpg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(47);
-/* harmony import */ var _src_assets_img_properties_strive_partners_realty_jpg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(123);
-/* harmony import */ var _src_assets_img_security_ico_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(247);
-/* harmony import */ var _src_assets_img_air_ico_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(14);
-/* harmony import */ var _src_assets_img_garden_ico_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(996);
-/* harmony import */ var _src_assets_img_parking_ico_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(233);
-/* harmony import */ var _src_assets_img_furniture_ico_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(500);
-/* harmony import */ var _src_assets_img_pool_ico_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(934);
-/* harmony import */ var _src_assets_img_reviewers_acathe_jpg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(761);
-/* harmony import */ var _src_assets_img_reviewers_jlee_jpg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(183);
-/* harmony import */ var _src_assets_img_reviewers_rev_1_fem_jpg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(866);
-/* harmony import */ var _src_assets_img_reviewers_rev_1_m_jpg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(67);
-/* harmony import */ var _src_assets_img_reviewers_rev_2_fem_jpg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(953);
-/* harmony import */ var _src_assets_img_reviewers_rev_2_m_jpg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(903);
-/* harmony import */ var _src_assets_img_reviewers_rev_3_fem_jpg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(55);
-/* harmony import */ var _src_assets_img_reviewers_rev_3_m_jpg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(165);
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(211);
-/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_32__);
-//Default layout import
-
-
-
-
+/* harmony import */ var _src_assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(522);
+/* harmony import */ var _src_assets_img_favicon_ico__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(687);
+/* harmony import */ var _src_assets_img_main_section_img_cover_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(329);
+/* harmony import */ var _src_assets_img_main_section_img_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(319);
+/* harmony import */ var _src_assets_img_feautured_img_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(984);
+/* harmony import */ var _src_assets_img_line_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(158);
+/* harmony import */ var _src_assets_img_biotech_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(824);
+/* harmony import */ var _src_assets_img_express_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(700);
+/* harmony import */ var _src_assets_img_smilehome_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(572);
+/* harmony import */ var _src_assets_img_connect_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(316);
+/* harmony import */ var _src_assets_img_homebuild_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(957);
+/* harmony import */ var _src_assets_img_properties_banyon_tree_realty_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(353);
+/* harmony import */ var _src_assets_img_properties_capital_hill_residence_jpg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(901);
+/* harmony import */ var _src_assets_img_properties_picket_fence_realty_jpg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(976);
+/* harmony import */ var _src_assets_img_properties_corsair_real_estate_jpg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(210);
+/* harmony import */ var _src_assets_img_properties_sequoia_real_estate_jpg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(47);
+/* harmony import */ var _src_assets_img_properties_strive_partners_realty_jpg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(123);
+/* harmony import */ var _src_assets_img_security_ico_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(247);
+/* harmony import */ var _src_assets_img_air_ico_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(14);
+/* harmony import */ var _src_assets_img_garden_ico_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(996);
+/* harmony import */ var _src_assets_img_parking_ico_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(233);
+/* harmony import */ var _src_assets_img_furniture_ico_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(500);
+/* harmony import */ var _src_assets_img_pool_ico_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(934);
+/* harmony import */ var _src_assets_img_reviewers_acathe_jpg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(761);
+/* harmony import */ var _src_assets_img_reviewers_jlee_jpg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(183);
+/* harmony import */ var _src_assets_img_reviewers_rev_1_fem_jpg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(866);
+/* harmony import */ var _src_assets_img_reviewers_rev_1_m_jpg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(67);
+/* harmony import */ var _src_assets_img_reviewers_rev_2_fem_jpg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(953);
+/* harmony import */ var _src_assets_img_reviewers_rev_2_m_jpg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(903);
+/* harmony import */ var _src_assets_img_reviewers_rev_3_fem_jpg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(55);
+/* harmony import */ var _src_assets_img_reviewers_rev_3_m_jpg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(165);
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(211);
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_31__);
 //Import Styles
-
-
 
 
 //Import images
@@ -2712,7 +2669,7 @@ var __webpack_exports__ = {};
 
 var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
 
-nouislider__WEBPACK_IMPORTED_MODULE_32___default().create(nonLinearStepSlider, {
+nouislider__WEBPACK_IMPORTED_MODULE_31___default().create(nonLinearStepSlider, {
     start: [500, 4000],
     range: {
         'min': [0],

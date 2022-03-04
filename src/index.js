@@ -1,12 +1,5 @@
-//Default layout import
-import "../src/layouts/default/default.js";
-
-
-
 //Import Styles
 import '../src/styles.scss';
-
-
 
 //Import images
 import "../src/assets/img/logo.svg";

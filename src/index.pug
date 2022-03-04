@@ -16,11 +16,12 @@ mixin popular(img, name, place, bedroom, dining, bathroom, price)
         p.property-card__price= price
         a(href='#').button.property-card__details-btn View Details
 
-mixin featured(img, header, description)
+mixin featured(img, title, description)
   .featured-card
-    .featured-card__icon
-      img(src= img)
-    h3.featured-card__header= header
+    .featured-card__head
+      .featured-card__icon
+        img(src= img)
+      h3.featured-card__title= title
     p.featured-card__description= description
 
 mixin review(photo, name, position, review)
@@ -109,15 +110,14 @@ block content
         h2.section-header.featured__section-header Property Featured
         p.featured__section-description Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there’s plenty of 
         .featured__content
-          .featured__grid-container.featured__grid-container_left
-            +featured('./assets/img/security_ico.svg', '100% Security', 'For many of us, buying a home is a dre and one not easily attainable.')
-            +featured('./assets/img/air_ico.svg', 'Free air conditioner', 'For many of us, buying a home is a dre and one not easily attainable.')
-            +featured('./assets/img/garden_ico.svg', 'Flower garden', 'For many of us, buying a home is a dre and one not easily attainable.')
-          img.featured__picture(src='./assets/img/feautured-img.jpg')
-          .featured__grid-container.featured__grid-container_right
-            +featured('./assets/img/parking_ico.svg', 'Parkers & movers', 'For many of us, buying a home is a dre and one not easily attainable.')
-            +featured('./assets/img/furniture_ico.svg', 'Rental furniture', 'For many of us, buying a home is a dre and one not easily attainable.')
-            +featured('./assets/img/pool_ico.svg', 'Swimming pool', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/security_ico.svg', '100% Security', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/air_ico.svg', 'Free air conditioner', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/garden_ico.svg', 'Flower garden', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/parking_ico.svg', 'Parkers & movers', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/furniture_ico.svg', 'Rental furniture', 'For many of us, buying a home is a dre and one not easily attainable.')
+          +featured('./assets/img/pool_ico.svg', 'Swimming pool', 'For many of us, buying a home is a dre and one not easily attainable.')
+          .featured__image-container
+            img.featured__picture(src='./assets/img/feautured-img.jpg')
       section.reviews
         .reviews__title-container
           a.reviews__link(href='#') Reviews 
