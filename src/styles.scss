@@ -3,6 +3,8 @@
 //Background picture =================================================================================================================================
 
 .background-picture {
+  box-sizing: border-box;
+  margin: 0 auto;
   @media (min-width: variables.$md3 + 1px) {
     display: none;
   }
@@ -153,7 +155,6 @@
     @media (max-width: variables.$md1) {
       width: 767px;
       padding: 31px 5px;
-
     }
   }
   &__search-btn {
@@ -276,7 +277,7 @@
 
 .featured {
   min-height: 1000px;
-  margin-top: 209px;
+  margin-top: 206px;
   background-color: #F9F9F9;
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
   padding-top: 1px;
@@ -286,18 +287,20 @@
   @media (max-width: variables.$md3) {
     min-height: fit-content;
   }
-  &__section-header {
-    width: 550px;
-    margin: 0 auto;
+  &__title {
+    width: fit-content;
     text-align: center;
+    margin: 0 auto;
     position: relative;
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
       position: absolute;
       width: 40.48px;
       height: 52.44px;
-      top: -1%;
-      left: 10%;
+      left: -4%;
+      @media (max-width: variables.$md3) {
+        display: none;
+      }
     }
   }
   &__section-description {
@@ -334,7 +337,6 @@
   &__picture {
     max-width: 362px;
     max-height: 548px;
-    
   }
 }
 
@@ -369,7 +371,6 @@
     width: fit-content;
     text-align: center;
     position: relative;
-    
     &::before {
       content: url('../src/assets/img/h2_decoration.svg');
       position: absolute;
@@ -671,6 +672,7 @@
   height: 202px;
   border-radius: 10px;
   background-color: #FFFFFF;
+  opacity: 96%;
   box-sizing: border-box;
   padding: 25px;
   z-index: 5;
@@ -698,6 +700,9 @@
     font-weight: 600;
     font-size: 1.375em;
     margin: 10px 0 -5px 0;
+    @media (max-width: variables.$md3) {
+      font-size: 1.2em;
+    }
   }
   &__description {
     color: rgba(3, 10, 27, 70%);
@@ -709,6 +714,7 @@
 //Reviews cards ------------------------------------------------------------------------------------
 
 .review-card {
+  box-sizing: border-box;
   width: 100%;
   border: 2px solid rgba(254, 117, 63, 0.1);
   border-radius: 10px;
@@ -717,7 +723,6 @@
   position: relative;
   @media (max-width: variables.$md1) {
     height: fit-content;
-    width: 95%;
     padding: 10px;
   }
   &::before {

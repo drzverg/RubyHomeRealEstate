@@ -30,6 +30,7 @@
 .header-menu {
   &__body {
     @media (max-width: variables.$md3) {
+      box-sizing: border-box;
       position: fixed;
       width: 50%;
       height: 100vh;
